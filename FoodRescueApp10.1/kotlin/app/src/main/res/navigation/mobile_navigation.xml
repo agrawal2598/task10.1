@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/loginFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.google.android.gms.samples.wallet.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_addFoodFragment"
+            app:destination="@id/addFoodFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_nav_home_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
+        <action
+            android:id="@+id/action_nav_home_to_myListFragment"
+            app:destination="@id/myListFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
+        <action
+            android:id="@+id/action_nav_home_to_myCartFragment"
+            app:destination="@id/myCartFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.google.android.gms.samples.wallet.ui.login.LoginFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_loginFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.google.android.gms.samples.wallet.ui.food.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" />
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.google.android.gms.samples.wallet.ui.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myListFragment"
+        android:name="com.google.android.gms.samples.wallet.ui.mylist.MyListFragment"
+        android:label="MyListFragment" />
+    <fragment
+        android:id="@+id/myCartFragment"
+        android:name="com.google.android.gms.samples.wallet.ui.cart.MyCartFragment"
+        android:label="MyCartFragment" />
+</navigation>
