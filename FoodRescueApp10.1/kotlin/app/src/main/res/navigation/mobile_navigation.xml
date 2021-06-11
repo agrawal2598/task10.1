@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.google.android.gms.samples.wallet.ui.home.HomeFragment"
+        android:name="com.example.foodrescueapp.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -38,11 +38,18 @@
             app:exitAnim="@anim/slide_out_fragment_to_left"
             app:popEnterAnim="@anim/slide_out_fragment_to_right"
             app:popExitAnim="@anim/slide_in_fragment_from_left"/>
+        <action
+            android:id="@+id/action_nav_home_to_viewFoodFragment"
+            app:destination="@id/viewFoodFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.google.android.gms.samples.wallet.ui.login.LoginFragment"
+        android:name="com.example.foodrescueapp.ui.login.LoginFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_login">
         <action
@@ -63,13 +70,13 @@
 
     <fragment
         android:id="@+id/addFoodFragment"
-        android:name="com.google.android.gms.samples.wallet.ui.food.AddFoodFragment"
+        android:name="com.example.foodrescueapp.ui.food.AddFoodFragment"
         android:label="fragment_add_food"
         tools:layout="@layout/fragment_add_food" />
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.google.android.gms.samples.wallet.ui.signup.SignUpFragment"
+        android:name="com.example.foodrescueapp.ui.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -85,10 +92,26 @@
     </fragment>
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.google.android.gms.samples.wallet.ui.mylist.MyListFragment"
-        android:label="MyListFragment" />
+        android:name="com.example.foodrescueapp.ui.mylist.MyListFragment"
+        android:label="MyListFragment" >
+        <action
+            android:id="@+id/action_myListFragment_to_viewFoodFragment"
+            app:destination="@id/viewFoodFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
+    </fragment>
     <fragment
         android:id="@+id/myCartFragment"
-        android:name="com.google.android.gms.samples.wallet.ui.cart.MyCartFragment"
+        android:name="com.example.foodrescueapp.ui.cart.MyCartFragment"
         android:label="MyCartFragment" />
+    <fragment
+        android:id="@+id/viewFoodFragment"
+        android:name="com.example.foodrescueapp.ui.food.ViewFoodFragment"
+        android:label="ViewFoodFragment" >
+        <action
+            android:id="@+id/action_viewFoodFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
